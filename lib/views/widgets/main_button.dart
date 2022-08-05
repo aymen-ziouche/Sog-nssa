@@ -22,6 +22,7 @@ class MainButton extends StatelessWidget {
         ),
         child: Text(
           text,
+          style: TextStyle(fontSize: 16),
         ),
       ),
     );

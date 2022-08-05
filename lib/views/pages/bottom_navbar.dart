@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:sognssa/views/pages/home_page.dart';
+import 'package:sognssa/views/pages/profile_page.dart';
 
 class BottonNavBar extends StatefulWidget {
   const BottonNavBar({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class _BottonNavBarState extends State<BottonNavBar> {
       Container(),
       Container(),
       Container(),
-      Container(),
+      ProfilePage(),
     ];
   }
 

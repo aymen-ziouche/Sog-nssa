@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "817461436876",
+    "project_id": "sognssa-43afb",
+    "storage_bucket": "sognssa-43afb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817461436876:android:89cd2fa389dad525f57d69",
+        "android_client_info": {
+          "package_name": "com.example.sognssa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817461436876-oqp190hbc9huinf5gle88n38arru90nj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sognssa",
+            "certificate_hash": "0ac887f28832e381e5d4e80bdfcceaa41a936f5b"
+          }
+        },
+        {
+          "client_id": "817461436876-q8hqsludv7o8hvddluuksloetrkqi28t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN3AqO2PtyKKn2wN1ISVg2GREbQVpPswM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817461436876-q8hqsludv7o8hvddluuksloetrkqi28t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

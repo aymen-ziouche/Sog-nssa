@@ -50,7 +50,7 @@ class ListItemHome extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
+              )
             ],
           ),
           const SizedBox(height: 8.0),
@@ -61,17 +61,12 @@ class ListItemHome extends StatelessWidget {
                 ),
           ),
           const SizedBox(height: 6.0),
-          SizedBox(
-            width: 200,
-            child: Text(
-              product.title,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
-            ),
+          Text(
+            product.title,
+            style: Theme.of(context)
+                .textTheme
+                .subtitle1!
+                .copyWith(fontWeight: FontWeight.w600, color: Colors.white),
           ),
           const SizedBox(height: 6.0),
           Text(
