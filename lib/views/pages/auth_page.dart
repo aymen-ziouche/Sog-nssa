@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sognssa/controllers/auth_controllers.dart';
+import 'package:sognssa/utils/assets.dart';
 import 'package:sognssa/utils/enums.dart';
 import 'package:sognssa/views/widgets/main_button.dart';
 import 'package:sognssa/views/widgets/main_dialog.dart';
+import 'package:sognssa/views/widgets/social_media_button.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);
@@ -60,14 +62,10 @@ class _AuthPageState extends State<AuthPage> {
                         model.authFormType == AuthFormType.login
                             ? 'Login'
                             : 'Register',
-                        style: Theme.of(context).textTheme.headline4!.copyWith(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
+                        style: Theme.of(context).textTheme.headline4,
                       ),
                       const SizedBox(height: 80.0),
                       TextFormField(
-                        style: const TextStyle(color: Colors.white),
                         controller: _emailController,
                         focusNode: _emailFocusNode,
                         onEditingComplete: () => FocusScope.of(context)
@@ -76,33 +74,22 @@ class _AuthPageState extends State<AuthPage> {
                         onChanged: model.updateEmail,
                         validator: (val) =>
                             val!.isEmpty ? 'Please enter your email!' : null,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Email',
-                          labelStyle: const TextStyle(color: Colors.white),
-                          hintStyle: TextStyle(
-                              color: Theme.of(context)
-                                  .primaryColor
-                                  .withOpacity(0.5)),
                           hintText: 'Enter your email!',
                         ),
                       ),
                       const SizedBox(height: 24.0),
                       TextFormField(
-                        style: const TextStyle(color: Colors.white),
                         controller: _passwordController,
                         focusNode: _passwordFocusNode,
                         validator: (val) =>
                             val!.isEmpty ? 'Please enter your password!' : null,
                         onChanged: model.updatePassword,
                         obscureText: true,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Password',
                           hintText: 'Enter your pasword!',
-                          labelStyle: const TextStyle(color: Colors.white),
-                          hintStyle: TextStyle(
-                              color: Theme.of(context)
-                                  .primaryColor
-                                  .withOpacity(0.5)),
                         ),
                       ),
                       const SizedBox(height: 16.0),
@@ -110,10 +97,7 @@ class _AuthPageState extends State<AuthPage> {
                         Align(
                           alignment: Alignment.topRight,
                           child: InkWell(
-                            child: const Text(
-                              'Forgot your password?',
-                              style: TextStyle(color: Colors.white),
-                            ),
+                            child: const Text('Forgot your password?'),
                             onTap: () {},
                           ),
                         ),
@@ -136,7 +120,6 @@ class _AuthPageState extends State<AuthPage> {
                             model.authFormType == AuthFormType.login
                                 ? 'Don\'t have an account? Register'
                                 : 'Have an account? Login',
-                            style: TextStyle(color: Colors.white),
                           ),
                           onTap: () {
                             _formKey.currentState!.reset();
@@ -144,40 +127,27 @@ class _AuthPageState extends State<AuthPage> {
                           },
                         ),
                       ),
-                      SizedBox(height: size.height * 0.07),
+                      SizedBox(height: size.height * 0.09),
                       Align(
                           alignment: Alignment.center,
                           child: Text(
                             model.authFormType == AuthFormType.login
                                 ? 'Or Login with'
                                 : 'Or Register with',
-                            style:
-                                Theme.of(context).textTheme.subtitle1!.copyWith(
-                                      color: Colors.white,
-                                    ),
+                            style: Theme.of(context).textTheme.subtitle1,
                           )),
                       const SizedBox(height: 16.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Container(
-                            height: 80,
-                            width: 80,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16.0),
-                              color: Colors.white,
-                            ),
-                            child: const Icon(Icons.add),
+                          SocialMediaButton(
+                            iconName: AppAssets.facebookIcon,
+                            onPress: () {},
                           ),
                           const SizedBox(width: 16.0),
-                          Container(
-                            height: 80,
-                            width: 80,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16.0),
-                              color: Colors.white,
-                            ),
-                            child: const Icon(Icons.add),
+                          SocialMediaButton(
+                            iconName: AppAssets.googleIcon,
+                            onPress: () {},
                           ),
                         ],
                       ),

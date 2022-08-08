@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sognssa/controllers/auth_controllers.dart';
+import 'package:sognssa/controllers/database_controller.dart';
 import 'package:sognssa/services/auth.dart';
 import 'package:sognssa/views/pages/auth_page.dart';
 import 'package:sognssa/views/pages/bottom_navbar.dart';
@@ -26,7 +27,9 @@ class LandingPage extends StatelessWidget {
           }
           return ChangeNotifierProvider<AuthController>(
             create: (_) => AuthController(auth: auth),
-            child:  const BottonNavBar(),
+            child: Provider<Database>(
+              create: (_) => FirestoreDatabase(user.uid),
+              child: const BottonNavBar()),
           );
         }
         // TODO: We will refactor this to make one component for loading

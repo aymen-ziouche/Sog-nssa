@@ -5,16 +5,16 @@ class Product {
   final String title;
   final int price;
   final String imgUrl;
-  final int discountValue;
+  final int? discountValue;
   final String category;
-  final double? rate;
+  final int? rate;
 
   Product({
     required this.id,
     required this.title,
     required this.price,
     required this.imgUrl,
-    this.discountValue = 0,
+    this.discountValue,
     this.category = 'Other',
     this.rate,
   });
@@ -39,7 +39,7 @@ class Product {
       imgUrl: map['imgUrl'] as String,
       discountValue: map['discountValue'] as int,
       category: map['category'] as String,
-      rate: map['rate'] as double,
+      rate: map['rate'] as int,
     );
   }
 }
@@ -47,49 +47,49 @@ class Product {
 List<Product> dummyProducts = [
   Product(
     id: '1',
-    title: 'Prada sunglasses',
+    title: 'T-shirt',
     price: 300,
     imgUrl: AppAssets.tempProductAsset1,
-    category: 'accessories',
+    category: 'Clothes',
     discountValue: 20,
   ),
   Product(
     id: '1',
-    title: 'Prada sunglasses',
+    title: 'T-shirt',
     price: 300,
     imgUrl: AppAssets.tempProductAsset1,
-    category: 'accessories',
+    category: 'Clothes',
     discountValue: 20,
   ),
   Product(
     id: '1',
-    title: 'Prada sunglasses',
+    title: 'T-shirt',
     price: 300,
     imgUrl: AppAssets.tempProductAsset1,
-    category: 'accessories',
+    category: 'Clothes',
     discountValue: 20,
   ),
   Product(
     id: '1',
-    title: 'Prada sunglasses',
+    title: 'T-shirt',
     price: 300,
     imgUrl: AppAssets.tempProductAsset1,
-    category: 'accessories',
+    category: 'Clothes',
     discountValue: 20,
   ),
   Product(
     id: '1',
-    title: 'Prada sunglasses',
+    title: 'T-shirt',
     price: 300,
     imgUrl: AppAssets.tempProductAsset1,
-    category: 'accessories',
+    category: 'Clothes',
   ),
   Product(
     id: '1',
-    title: 'Prada sunglasses',
+    title: 'T-shirt',
     price: 300,
     imgUrl: AppAssets.tempProductAsset1,
-    category: 'accessories',
+    category: 'Clothes',
     discountValue: 20,
   ),
 ];

@@ -64,7 +64,7 @@ class _BottonNavBarState extends State<BottonNavBar> {
   @override
   Widget build(BuildContext context) {
     return BackdropFilter(
-      filter: new ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+      filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
       child: Scaffold(
           backgroundColor: Colors.transparent,
           body: PersistentTabView(
