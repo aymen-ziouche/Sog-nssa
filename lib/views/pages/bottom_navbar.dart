@@ -22,7 +22,7 @@ class _BottonNavBarState extends State<BottonNavBar> {
       Container(),
       Container(),
       Container(),
-      ProfilePage(),
+      const ProfilePage(),
     ];
   }
 

@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         title: 'Sognssa',
         theme: ThemeData(
             scaffoldBackgroundColor: const Color(0xFF131416),
-            primaryColor: Color(0xFFBF3FCA),
+            primaryColor: const Color(0xFFBF3FCA),
             inputDecorationTheme: InputDecorationTheme(
               labelStyle: Theme.of(context).textTheme.subtitle1,
               focusedBorder: OutlineInputBorder(

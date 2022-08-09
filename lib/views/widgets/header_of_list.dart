@@ -23,14 +23,16 @@ class HeaderOfList extends StatelessWidget {
               title,
               style: Theme.of(context).textTheme.headline4!.copyWith(
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
             ),
             InkWell(
               onTap: onTap,
               child: Text(
                 'View All',
-                style: Theme.of(context).textTheme.subtitle1,
+                style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                      color: Colors.white,
+                    ),
               ),
             ),
           ],
@@ -38,7 +40,7 @@ class HeaderOfList extends StatelessWidget {
         Text(
           description,
           style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                color: Colors.grey,
+                color: Colors.white70,
               ),
         ),
       ],
