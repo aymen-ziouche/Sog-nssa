@@ -45,7 +45,8 @@ class ListItemHome extends StatelessWidget {
                   child: DecoratedBox(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16.0),
-                      color: isNew ? Colors.black : Colors.red,
+                      color:
+                          isNew ? Colors.black : Theme.of(context).primaryColor,
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(4.0),
@@ -83,9 +84,16 @@ class ListItemHome extends StatelessWidget {
                 child: InkWell(
                   onTap: addToFavorites,
                   child: Icon(
-                    isFavorite ? Icons.favorite : Icons.favorite_outline,
+                    isFavorite
+                        ? Icons.favorite
+                        : Icons.favorite_border_outlined,
                     size: 20.0,
-                    color: isFavorite ? Colors.red : Colors.grey,
+                    color: Theme.of(context).primaryColor,
+                    // isFavorite ? Icons.favorite : Icons.favorite_outline,
+                    // size: 20.0,
+                    // color: isFavorite
+                    //     ? Theme.of(context).primaryColor
+                    //     : Colors.grey,
                   ),
                 ),
               ),
@@ -128,6 +136,7 @@ class ListItemHome extends StatelessWidget {
                   product.title,
                   style: Theme.of(context).textTheme.subtitle1!.copyWith(
                         fontWeight: FontWeight.w600,
+                        color: Colors.white,
                       ),
                 ),
                 const SizedBox(height: 6.0),
@@ -158,7 +167,7 @@ class ListItemHome extends StatelessWidget {
                                   .textTheme
                                   .subtitle2!
                                   .copyWith(
-                                    color: Colors.red,
+                                    color: Theme.of(context).primaryColor,
                                   ),
                             ),
                           ],

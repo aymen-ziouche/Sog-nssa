@@ -6,8 +6,10 @@ class AppAssets {
       'https://www.prada.com/content/dam/pradanux_products/A/APR/APR15W/E01RF00A6/APR15W_E01R_F00A6_C_055_MDL.png';
 
   /// Shop Page Images
+  
+
+
   ///
-  ///
-  static const facebookIcon = 'assets/facebook-svgrepo-com.svg';
-  static const googleIcon = 'assets/google-svgrepo-com.svg';
+  static const facebookIcon = 'assets/icons/facebook-svgrepo-com.svg';
+  static const googleIcon = 'assets/icons/google-svgrepo-com.svg';
 }

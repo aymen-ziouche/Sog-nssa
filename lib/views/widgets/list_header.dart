@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ListHeader extends StatelessWidget {
-
   final String title;
   final VoidCallback? onTap;
   final String description;
@@ -10,7 +9,8 @@ class ListHeader extends StatelessWidget {
     Key? key,
     required this.title,
     this.onTap,
-    required this.description,}) : super(key: key);
+    required this.description,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +23,9 @@ class ListHeader extends StatelessWidget {
             Text(
               title,
               style: Theme.of(context).textTheme.headline4!.copyWith(
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
             ),
             InkWell(
               onTap: onTap,
@@ -39,8 +39,8 @@ class ListHeader extends StatelessWidget {
         Text(
           description,
           style: Theme.of(context).textTheme.subtitle1!.copyWith(
-            color: Colors.grey,
-          ),
+                color: Colors.grey,
+              ),
         ),
       ],
     );

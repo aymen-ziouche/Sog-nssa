@@ -1,8 +1,3 @@
-
-
-
-
-
 import 'package:flutter/material.dart';
 import 'package:sognssa/models/product.dart';
 import 'package:sognssa/views/widgets/main_button.dart';
@@ -26,10 +21,16 @@ class _ProductDetailsState extends State<ProductDetails> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
+      extendBodyBehindAppBar: false,
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: true,
         title: Text(
           widget.product.title,
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.headline6?.copyWith(
+                color: Colors.white,
+              ),
         ),
         actions: [
           IconButton(
@@ -80,7 +81,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                               isFavorite
                                   ? Icons.favorite
                                   : Icons.favorite_border_outlined,
-                              color: Colors.black45,
+                              color: Theme.of(context).primaryColor,
                             ),
                           ),
                         ),
@@ -95,12 +96,14 @@ class _ProductDetailsState extends State<ProductDetails> {
                         widget.product.title,
                         style: Theme.of(context).textTheme.headline5!.copyWith(
                               fontWeight: FontWeight.w600,
+                              color: Colors.white,
                             ),
                       ),
                       Text(
                         '\$${widget.product.price}',
                         style: Theme.of(context).textTheme.headline5!.copyWith(
                               fontWeight: FontWeight.w600,
+                              color: Colors.white,
                             ),
                       ),
                     ],
@@ -109,13 +112,15 @@ class _ProductDetailsState extends State<ProductDetails> {
                   Text(
                     widget.product.category,
                     style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                          color: Colors.black54,
+                          color: Colors.white70,
                         ),
                   ),
                   const SizedBox(height: 16.0),
                   Text(
                     'This is a dummy description for this product! I think we will add it in the future! I need to add more lines, so I add these words just to have more than two lines!',
-                    style: Theme.of(context).textTheme.bodyLarge,
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          color: Colors.white,
+                        ),
                   ),
                   const SizedBox(height: 24.0),
                   MainButton(
