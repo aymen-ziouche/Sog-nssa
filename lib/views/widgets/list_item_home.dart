@@ -108,7 +108,8 @@ class ListItemHome extends StatelessWidget {
                   children: [
                     RatingBarIndicator(
                       itemSize: 25.0,
-                      rating: product.rate?.toDouble() ?? 4.0,
+                      unratedColor: Colors.white24,
+                      rating: product.rate?.toDouble() ?? 2.0,
                       itemBuilder: (context, _) => const Icon(
                         Icons.star,
                         color: Colors.amber,
@@ -119,7 +120,7 @@ class ListItemHome extends StatelessWidget {
                     Text(
                       '(100)',
                       style: Theme.of(context).textTheme.caption!.copyWith(
-                            color: Colors.grey,
+                            color: Colors.white70,
                           ),
                     ),
                   ],

@@ -14,7 +14,6 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return Provider<AuthBase>(
@@ -28,31 +27,31 @@ class MyApp extends StatelessWidget {
             inputDecorationTheme: InputDecorationTheme(
               labelStyle: Theme.of(context).textTheme.subtitle1,
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(2.0),
+                borderRadius: BorderRadius.circular(16.0),
                 borderSide: const BorderSide(
                   color: Color(0xFFBF3FCA),
                 ),
               ),
               disabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(2.0),
+                borderRadius: BorderRadius.circular(16.0),
                 borderSide: const BorderSide(
                   color: Color(0xFFBF3FCA),
                 ),
               ),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(2.0),
+                borderRadius: BorderRadius.circular(16.0),
                 borderSide: const BorderSide(
                   color: Color(0xFFBF3FCA),
                 ),
               ),
               errorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(2.0),
+                borderRadius: BorderRadius.circular(16.0),
                 borderSide: const BorderSide(
                   color: Colors.red,
                 ),
               ),
               focusedErrorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(2.0),
+                borderRadius: BorderRadius.circular(16.0),
                 borderSide: const BorderSide(
                   color: Colors.red,
                 ),
