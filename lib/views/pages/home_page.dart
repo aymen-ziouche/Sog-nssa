@@ -4,7 +4,6 @@ import 'package:sognssa/controllers/database_controller.dart';
 import 'package:sognssa/models/product.dart';
 import 'package:sognssa/utils/assets.dart';
 import 'package:sognssa/views/widgets/header_of_list.dart';
-import 'package:sognssa/views/widgets/list_header.dart';
 import 'package:sognssa/views/widgets/list_item_home.dart';
 
 class HomePage extends StatelessWidget {

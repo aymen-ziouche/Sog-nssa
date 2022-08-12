@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:provider/provider.dart';
+import 'package:sognssa/controllers/database_controller.dart';
 import 'package:sognssa/models/product.dart';
 import 'package:sognssa/utils/routes.dart';
 
@@ -19,10 +21,14 @@ class ListItemHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final database = Provider.of<Database>(context);
     return InkWell(
       onTap: () => Navigator.of(context, rootNavigator: true).pushNamed(
         AppRoutes.productDetailsRoute,
-        arguments: product,
+        arguments: {	
+          'product': product,	
+          'database': database,	
+        },
       ),
       child: Stack(
         children: [
