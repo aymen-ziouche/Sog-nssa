@@ -1,4 +1,5 @@
 import 'package:sognssa/models/add_to_cart_module.dart';
+import 'package:sognssa/models/delivery_method.dart';
 import 'package:sognssa/models/product.dart';
 import 'package:sognssa/models/user_data.dart';
 import 'package:sognssa/services/firestore_services.dart';
@@ -7,7 +8,8 @@ import 'package:sognssa/utils/api_path.dart';
 abstract class Database {
   Stream<List<Product>> salesProductsStream();
   Stream<List<Product>> newProductsStream();
-    Stream<List<AddToCartModel>> myProductsCart();
+  Stream<List<AddToCartModel>> myProductsCart();
+  Stream<List<DeliveryMethod>> deliveryMethodsStream();
   Future<void> setUserData(UserData userData);
   Future<void> addToCart(AddToCartModel product);
 }
@@ -49,4 +51,11 @@ class FirestoreDatabase implements Database {
         builder: (data, documentId) =>
             AddToCartModel.fromMap(data!, documentId),
       );
+
+  @override
+  Stream<List<DeliveryMethod>> deliveryMethodsStream() =>
+      _service.collectionsStream(
+          path: ApiPath.deliveryMethods(),
+          builder: (data, documentId) =>
+              DeliveryMethod.fromMap(data!, documentId));
 }
