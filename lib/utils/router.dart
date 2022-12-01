@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:sognssa/controllers/database_controller.dart';
 import 'package:sognssa/utils/routes.dart';
 import 'package:sognssa/views/pages/bottom_navbar.dart';
+import 'package:sognssa/views/pages/checkout/add_shipping_address_page.dart';
 import 'package:sognssa/views/pages/checkout/checkout_page.dart';
 import 'package:sognssa/views/pages/landing_page.dart';
 import 'package:sognssa/views/pages/auth_page.dart';
@@ -35,6 +36,15 @@ Route<dynamic> onGenerate(RouteSettings settings) {
         builder: (_) => Provider<Database>.value(
           value: database,
           child: ProductDetails(product: product),
+        ),
+        settings: settings,
+      );
+    case AppRoutes.addShippingAddressRoute:
+      final database = settings.arguments as Database;
+      return MaterialPageRoute(
+        builder: (_) => Provider<Database>.value(
+          value: database,
+          child: const AddShippingAddressPage(),
         ),
         settings: settings,
       );

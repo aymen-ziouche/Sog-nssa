@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sognssa/controllers/database_controller.dart';
 import 'package:sognssa/models/delivery_method.dart';
+import 'package:sognssa/models/shipping_address.dart';
+import 'package:sognssa/utils/routes.dart';
 import 'package:sognssa/views/pages/checkout/checkout_order_details.dart';
 import 'package:sognssa/views/pages/checkout/delivery_method_item.dart';
 import 'package:sognssa/views/pages/checkout/payment_component.dart';
@@ -41,7 +43,46 @@ class CheckoutPage extends StatelessWidget {
                     .copyWith(color: Colors.white70),
               ),
               const SizedBox(height: 8.0),
-              ShippingAddressComponent(),
+                            StreamBuilder<List<ShippingAddress>>(
+                  stream: database.getShippingAddresses(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.active) {
+                      final shippingAddresses = snapshot.data;
+                      if (shippingAddresses == null ||
+                          shippingAddresses.isEmpty) {
+                        return Center(
+                          child: Column(
+                            children: [
+                              const Text('No Shipping Addresses!'),
+                              const SizedBox(height: 6.0),
+                              InkWell(
+                                onTap: () => Navigator.of(context).pushNamed(
+                                  AppRoutes.addShippingAddressRoute,
+                                  arguments: database,
+                                ),
+                                child: Text(
+                                  'Add new one',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .button!
+                                      .copyWith(
+                                        color: Colors.redAccent,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      }
+                      // TODO: We need to filter the data to chosse the default one only
+                      final shippingAddress = shippingAddresses.first;
+                      return ShippingAddressComponent(
+                          shippingAddress: shippingAddress);
+                    }
+                    return const Center(
+                      child: CircularProgressIndicator.adaptive(),
+                    );
+                  }),
               const SizedBox(height: 24.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
