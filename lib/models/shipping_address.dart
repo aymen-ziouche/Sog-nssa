@@ -1,4 +1,3 @@
-
 class ShippingAddress {
   final String id;
   final String fullName;
@@ -45,6 +44,28 @@ class ShippingAddress {
       state: map['state'] ?? '',
       zipCode: map['zipCode'] ?? '',
       isDefault: map['isDefault'] ?? false,
+    );
+  }
+
+  ShippingAddress copyWith({
+    String? id,
+    String? fullName,
+    String? country,
+    String? address,
+    String? city,
+    String? state,
+    String? zipCode,
+    bool? isDefault,
+  }) {
+    return ShippingAddress(
+      id: id ?? this.id,
+      fullName: fullName ?? this.fullName,
+      country: country ?? this.country,
+      address: address ?? this.address,
+      city: city ?? this.city,
+      state: state ?? this.state,
+      zipCode: zipCode ?? this.zipCode,
+      isDefault: isDefault ?? this.isDefault,
     );
   }
 }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:sognssa/controllers/database_controller.dart';
 import 'package:sognssa/models/shipping_address.dart';
+import 'package:sognssa/utils/routes.dart';
 
 class ShippingAddressComponent extends StatelessWidget {
   final ShippingAddress shippingAddress;
@@ -8,6 +11,7 @@ class ShippingAddressComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final database = Provider.of<Database>(context);
     return Card(
       color: Colors.white70,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
@@ -26,7 +30,10 @@ class ShippingAddressComponent extends StatelessWidget {
                       ),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () => Navigator.of(context).pushNamed(
+                    AppRoutes.shippingAddressesRoute,
+                    arguments: database,
+                  ),
                   child: Text(
                     'Change',
                     style: Theme.of(context).textTheme.button!.copyWith(
