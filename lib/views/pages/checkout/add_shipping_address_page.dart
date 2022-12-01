@@ -1,7 +1,4 @@
-
-
-
-
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -68,10 +65,14 @@ class _AddShippingAddressPageState extends State<AddShippingAddressPage> {
     final database = Provider.of<Database>(context);
 
     return Scaffold(
+      backgroundColor: const Color(0xFF131416),
       appBar: AppBar(
+        backgroundColor: const Color(0xFF131416),
         title: Text(
           'Adding Shipping Address',
-          style: Theme.of(context).textTheme.subtitle1,
+          style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                color: Colors.white,
+              ),
         ),
         centerTitle: true,
       ),
@@ -87,66 +88,78 @@ class _AddShippingAddressPageState extends State<AddShippingAddressPage> {
                   controller: _fullNameController,
                   decoration: const InputDecoration(
                     labelText: 'Full Name',
-                    fillColor: Colors.white,
+                    labelStyle: TextStyle(color: Colors.white),
+                    fillColor: Colors.transparent,
                     filled: true,
                   ),
                   validator: (value) =>
                       value!.isNotEmpty ? null : 'Please enter your name',
+                  style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(height: 16.0),
                 TextFormField(
                   controller: _addressController,
                   decoration: const InputDecoration(
                     labelText: 'Address',
-                    fillColor: Colors.white,
+                    labelStyle: TextStyle(color: Colors.white),
+                    fillColor: Colors.transparent,
                     filled: true,
                   ),
                   validator: (value) =>
                       value!.isNotEmpty ? null : 'Please enter your name',
+                  style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(height: 16.0),
                 TextFormField(
                   controller: _cityController,
                   decoration: const InputDecoration(
                     labelText: 'City',
-                    fillColor: Colors.white,
+                    labelStyle: TextStyle(color: Colors.white),
+                    fillColor: Colors.transparent,
                     filled: true,
                   ),
                   validator: (value) =>
                       value!.isNotEmpty ? null : 'Please enter your name',
+                  style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(height: 16.0),
                 TextFormField(
                   controller: _stateController,
                   decoration: const InputDecoration(
                     labelText: 'State/Province',
-                    fillColor: Colors.white,
+                    labelStyle: TextStyle(color: Colors.white),
+                    fillColor: Colors.transparent,
                     filled: true,
                   ),
                   validator: (value) =>
                       value!.isNotEmpty ? null : 'Please enter your name',
+                  style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(height: 16.0),
                 TextFormField(
                   controller: _zipCodeController,
                   decoration: const InputDecoration(
                     labelText: 'Zip Code',
-                    fillColor: Colors.white,
+                    labelStyle: TextStyle(color: Colors.white),
+                    fillColor: Colors.transparent,
                     filled: true,
                   ),
                   validator: (value) =>
                       value!.isNotEmpty ? null : 'Please enter your name',
+                  style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(height: 16.0),
                 TextFormField(
                   controller: _countryController,
                   decoration: const InputDecoration(
                     labelText: 'Country',
-                    fillColor: Colors.white,
+                    labelStyle: TextStyle(color: Colors.white),
+                    fillColor: Colors.transparent,
                     filled: true,
                   ),
                   validator: (value) =>
                       value!.isNotEmpty ? null : 'Please enter your name',
+                  style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(height: 32.0),
                 MainButton(

@@ -33,7 +33,10 @@ class _AuthPageState extends State<AuthPage> {
       await model.submit();
       if (!mounted) return;
     } catch (e) {
-      MainDialog(context: context, title: 'Error Authentication', content: e.toString())
+      MainDialog(
+              context: context,
+              title: 'Error Authentication',
+              content: e.toString())
           .showAlertDialog();
     }
   }
@@ -62,7 +65,10 @@ class _AuthPageState extends State<AuthPage> {
                         model.authFormType == AuthFormType.login
                             ? 'Login'
                             : 'Register',
-                        style: Theme.of(context).textTheme.headline4,
+                        style: Theme.of(context).textTheme.headline4!.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
                       ),
                       const SizedBox(height: 80.0),
                       TextFormField(
@@ -71,12 +77,21 @@ class _AuthPageState extends State<AuthPage> {
                         onEditingComplete: () => FocusScope.of(context)
                             .requestFocus(_passwordFocusNode),
                         textInputAction: TextInputAction.next,
+                        style: const TextStyle(
+                          color: Colors.white,
+                        ),
                         onChanged: model.updateEmail,
                         validator: (val) =>
                             val!.isEmpty ? 'Please enter your email!' : null,
                         decoration: const InputDecoration(
                           labelText: 'Email',
                           hintText: 'Enter your email!',
+                          hintStyle: TextStyle(
+                            color: Colors.white70,
+                          ),
+                          labelStyle: TextStyle(
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       const SizedBox(height: 24.0),
@@ -86,10 +101,19 @@ class _AuthPageState extends State<AuthPage> {
                         validator: (val) =>
                             val!.isEmpty ? 'Please enter your password!' : null,
                         onChanged: model.updatePassword,
+                        style: const TextStyle(
+                          color: Colors.white,
+                        ),
                         obscureText: true,
                         decoration: const InputDecoration(
                           labelText: 'Password',
                           hintText: 'Enter your pasword!',
+                          hintStyle: TextStyle(
+                            color: Colors.white70,
+                          ),
+                          labelStyle: TextStyle(
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       const SizedBox(height: 16.0),
@@ -97,7 +121,10 @@ class _AuthPageState extends State<AuthPage> {
                         Align(
                           alignment: Alignment.topRight,
                           child: InkWell(
-                            child: const Text('Forgot your password?'),
+                            child: const Text(
+                              'Forgot your password?',
+                              style: TextStyle(color: Colors.white70),
+                            ),
                             onTap: () {},
                           ),
                         ),
@@ -117,10 +144,10 @@ class _AuthPageState extends State<AuthPage> {
                         alignment: Alignment.center,
                         child: InkWell(
                           child: Text(
-                            model.authFormType == AuthFormType.login
-                                ? 'Don\'t have an account? Register'
-                                : 'Have an account? Login',
-                          ),
+                              model.authFormType == AuthFormType.login
+                                  ? 'Don\'t have an account? Register'
+                                  : 'Have an account? Login',
+                              style: const TextStyle(color: Colors.white70)),
                           onTap: () {
                             _formKey.currentState!.reset();
                             model.toggleFormType();
@@ -134,7 +161,10 @@ class _AuthPageState extends State<AuthPage> {
                             model.authFormType == AuthFormType.login
                                 ? 'Or Login with'
                                 : 'Or Register with',
-                            style: Theme.of(context).textTheme.subtitle1,
+                            style:
+                                Theme.of(context).textTheme.subtitle1!.copyWith(
+                                      color: Colors.white,
+                                    ),
                           )),
                       const SizedBox(height: 16.0),
                       Row(

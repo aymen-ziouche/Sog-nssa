@@ -43,7 +43,7 @@ class CheckoutPage extends StatelessWidget {
                     .copyWith(color: Colors.white70),
               ),
               const SizedBox(height: 8.0),
-                            StreamBuilder<List<ShippingAddress>>(
+              StreamBuilder<List<ShippingAddress>>(
                   stream: database.getShippingAddresses(),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.active) {
@@ -66,7 +66,7 @@ class CheckoutPage extends StatelessWidget {
                                       .textTheme
                                       .button!
                                       .copyWith(
-                                        color: Colors.redAccent,
+                                        color: Colors.white,
                                       ),
                                 ),
                               ),
@@ -74,7 +74,6 @@ class CheckoutPage extends StatelessWidget {
                           ),
                         );
                       }
-                      // TODO: We need to filter the data to chosse the default one only
                       final shippingAddress = shippingAddresses.first;
                       return ShippingAddressComponent(
                           shippingAddress: shippingAddress);
