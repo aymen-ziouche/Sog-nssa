@@ -18,7 +18,7 @@ Product search and filtering: Users can search for products based on various att
     Install dependencies: flutter pub get
     Run the app: flutter run
 ## Usage
-To use the app, simply sign up or log in with your account credentials. From there, you can browse products, add items to your cart, and securely checkout using Stripe payment processing.
+To use the app, simply sign up or log in with your account credentials. From there, you can browse products, add items to your cart.
 
 ## Contributing
 Contributions to this project are welcome! If you find a bug or have a feature request, please open an issue or submit a pull request.
