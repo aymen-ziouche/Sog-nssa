@@ -1,24 +1,22 @@
 # sognssa
 
-Sog-nssa is a mobile e-commerce application that provides a platform for purchasing products marketed towards women. The app was built with Flutter and Firebase, and includes features such as user authentication, shopping cart functionality, product search and filtering, and payment processing.
+Sog-nssa is a mobile e-commerce application that provides a platform for purchasing products marketed towards women. The app was built with Flutter and Firebase, and includes features such as user authentication, shopping cart functionality, product search and filtering.
 
 ## Features
 User authentication: Users can create accounts and log in securely using Firebase Authentication.
 Shopping cart functionality: Users can add products to their shopping cart and easily manage their orders.
 Product search and filtering: Users can search for products based on various attributes and filter results by category, price, and more.
-Payment processing: Users can securely pay for their orders using Stripe payment processing.
-Technologies Used
-Flutter: A mobile app development framework for building high-performance, high-fidelity, apps for iOS, Android, web, and desktop.
-Firebase Authentication: A service that provides easy-to-use authentication for mobile and web applications.
-Firestore: A cloud-hosted NoSQL database provided by Firebase.
-Firebase Storage: A cloud storage solution provided by Firebase.
-Provider: A state management library for Flutter that makes sharing data between widgets easy.
-Stripe: A payment processing platform for online businesses.
+## Technologies Used
+    Flutter: A mobile app development framework for building high-performance, high-fidelity, apps for iOS, Android, web, and desktop.
+    Firebase Authentication: A service that provides easy-to-use authentication for mobile and web applications.
+    Firestore: A cloud-hosted NoSQL database provided by Firebase.
+    Firebase Storage: A cloud storage solution provided by Firebase.
+    Provider: A state management library for Flutter that makes sharing data between widgets easy.
 ## Installation
-Clone the repository: git clone https://github.com/aymen-ziouche/Sog-nssa.git
-Navigate to the project directory: cd Sog-nssa
-Install dependencies: flutter pub get
-Run the app: flutter run
+    Clone the repository: git clone https://github.com/aymen-ziouche/Sog-nssa.git
+    Navigate to the project directory: cd Sog-nssa
+    Install dependencies: flutter pub get
+    Run the app: flutter run
 ## Usage
 To use the app, simply sign up or log in with your account credentials. From there, you can browse products, add items to your cart, and securely checkout using Stripe payment processing.
 
