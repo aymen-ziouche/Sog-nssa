@@ -40,7 +40,7 @@ class CartListItem extends StatelessWidget {
                   children: [
                     Text(
                       cartItem.title,
-                      style: Theme.of(context).textTheme.headline6!.copyWith(
+                      style: Theme.of(context).textTheme.titleLarge!.copyWith(
                             fontWeight: FontWeight.w600,
                           ),
                     ),
@@ -54,7 +54,7 @@ class CartListItem extends StatelessWidget {
                                   text: 'Color: ',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .caption!
+                                      .bodySmall!
                                       .copyWith(
                                         color: Colors.black87,
                                       )),
@@ -62,7 +62,7 @@ class CartListItem extends StatelessWidget {
                                 text: cartItem.color,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .caption!
+                                    .bodySmall!
                                     .copyWith(
                                       fontWeight: FontWeight.w500,
                                       color: Colors.black,
@@ -79,7 +79,7 @@ class CartListItem extends StatelessWidget {
                                   text: 'Size: ',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .caption!
+                                      .bodySmall!
                                       .copyWith(
                                         color: Colors.black87,
                                       )),
@@ -87,7 +87,7 @@ class CartListItem extends StatelessWidget {
                                 text: cartItem.size,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .caption!
+                                    .bodySmall!
                                     .copyWith(
                                       fontWeight: FontWeight.w500,
                                       color: Colors.black,
@@ -113,7 +113,7 @@ class CartListItem extends StatelessWidget {
                   const Icon(Icons.more_vert),
                   Text(
                     '${cartItem.price}\$',
-                    style: Theme.of(context).textTheme.headline6,
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ],
               ),

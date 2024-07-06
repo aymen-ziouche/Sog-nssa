@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: const Color(0xFF131416),
             primaryColor: const Color(0xFFBF3FCA),
             inputDecorationTheme: InputDecorationTheme(
-              labelStyle: Theme.of(context).textTheme.subtitle1,
+              labelStyle: Theme.of(context).textTheme.titleMedium,
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16.0),
                 borderSide: const BorderSide(

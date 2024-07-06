@@ -22,7 +22,7 @@ class CheckoutPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Checkout',
-          style: Theme.of(context).textTheme.subtitle1!.copyWith(
+          style: Theme.of(context).textTheme.titleMedium!.copyWith(
                 color: Colors.white,
               ),
         ),
@@ -39,7 +39,7 @@ class CheckoutPage extends StatelessWidget {
                 'Shipping address',
                 style: Theme.of(context)
                     .textTheme
-                    .headline6!
+                    .titleLarge!
                     .copyWith(color: Colors.white70),
               ),
               const SizedBox(height: 8.0),
@@ -64,7 +64,7 @@ class CheckoutPage extends StatelessWidget {
                                   'Add new one',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .button!
+                                      .labelLarge!
                                       .copyWith(
                                         color: Colors.white,
                                       ),
@@ -90,7 +90,7 @@ class CheckoutPage extends StatelessWidget {
                     'Payment',
                     style: Theme.of(context)
                         .textTheme
-                        .headline6!
+                        .titleLarge!
                         .copyWith(color: Colors.white70),
                   ),
                   InkWell(
@@ -98,7 +98,7 @@ class CheckoutPage extends StatelessWidget {
                     child: Text(
                       // color for the text is the theme's primary color
                       'Change',
-                      style: Theme.of(context).textTheme.button!.copyWith(
+                      style: Theme.of(context).textTheme.labelLarge!.copyWith(
                             color: Theme.of(context).primaryColor,
                           ),
                     ),
@@ -106,13 +106,13 @@ class CheckoutPage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 8.0),
-              PaymentComponent(),
+              const PaymentComponent(),
               const SizedBox(height: 24.0),
               Text(
                 'Delivery method',
                 style: Theme.of(context)
                     .textTheme
-                    .headline6!
+                    .titleLarge!
                     .copyWith(color: Colors.white70),
               ),
               const SizedBox(height: 8.0),
@@ -147,7 +147,7 @@ class CheckoutPage extends StatelessWidget {
                     );
                   }),
               const SizedBox(height: 32.0),
-              CheckoutOrderDetails(),
+              const CheckoutOrderDetails(),
               const SizedBox(height: 64.0),
               MainButton(
                 text: 'Submit Order',

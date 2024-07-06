@@ -24,7 +24,7 @@ class _ShippingAddressesPageState extends State<ShippingAddressesPage> {
         backgroundColor: const Color(0xFF131416),
         title: Text(
           'Shipping Addresses',
-          style: Theme.of(context).textTheme.headline6!.copyWith(
+          style: Theme.of(context).textTheme.titleLarge!.copyWith(
                 color: Colors.white,
               ),
         ),

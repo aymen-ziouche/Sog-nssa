@@ -21,7 +21,7 @@ class PaymentComponent extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 16.0),
-        Text(
+        const Text(
           '**** **** **** 2718',
           style: TextStyle(color: Colors.white70),
         ),

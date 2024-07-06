@@ -65,7 +65,7 @@ class _AuthPageState extends State<AuthPage> {
                         model.authFormType == AuthFormType.login
                             ? 'Login'
                             : 'Register',
-                        style: Theme.of(context).textTheme.headline4!.copyWith(
+                        style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                             ),
@@ -162,7 +162,7 @@ class _AuthPageState extends State<AuthPage> {
                                 ? 'Or Login with'
                                 : 'Or Register with',
                             style:
-                                Theme.of(context).textTheme.subtitle1!.copyWith(
+                                Theme.of(context).textTheme.titleMedium!.copyWith(
                                       color: Colors.white,
                                     ),
                           )),

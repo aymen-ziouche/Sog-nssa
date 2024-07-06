@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 import 'package:sognssa/views/pages/cart_page.dart';
 import 'package:sognssa/views/pages/home_page.dart';
 import 'package:sognssa/views/pages/profile_page.dart';
@@ -27,37 +27,43 @@ class _BottonNavBarState extends State<BottonNavBar> {
     ];
   }
 
-  List<PersistentBottomNavBarItem> _navBarsItems() {
+  List<PersistentTabConfig> _navBarsItems() {
     return [
-      PersistentBottomNavBarItem(
-        icon: const Icon(CupertinoIcons.home),
-        title: ("Home"),
-        activeColorPrimary: Theme.of(context).primaryColor,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
+      PersistentTabConfig(
+        item: ItemConfig(
+          icon: const Icon(CupertinoIcons.home),
+          title: ("Home"),
+          activeForegroundColor: Theme.of(context).primaryColor,
+          inactiveForegroundColor: CupertinoColors.systemGrey,
+        ),
+        screen: const HomePage(),
       ),
-      PersistentBottomNavBarItem(
-        icon: const Icon(CupertinoIcons.bag),
-        title: ("Shop"),
-        activeColorPrimary: Theme.of(context).primaryColor,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
+      PersistentTabConfig(
+        item: ItemConfig(
+          icon: const Icon(CupertinoIcons.bag),
+          title: ("Shop"),
+          activeForegroundColor: Theme.of(context).primaryColor,
+          inactiveForegroundColor: CupertinoColors.systemGrey,
+        ),
+        screen: const CartPage(),
       ),
-      PersistentBottomNavBarItem(
-        icon: const Icon(CupertinoIcons.shopping_cart),
-        title: ("Cart"),
-        activeColorPrimary: Theme.of(context).primaryColor,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
+      PersistentTabConfig(
+        item: ItemConfig(
+          icon: const Icon(Icons.favorite_border),
+          title: ("Favorites"),
+          activeForegroundColor: Theme.of(context).primaryColor,
+          inactiveForegroundColor: CupertinoColors.systemGrey,
+        ),
+        screen: const ProfilePage(),
       ),
-      PersistentBottomNavBarItem(
-        icon: const Icon(Icons.favorite_border),
-        title: ("Favorites"),
-        activeColorPrimary: Theme.of(context).primaryColor,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
-      ),
-      PersistentBottomNavBarItem(
-        icon: const Icon(CupertinoIcons.profile_circled),
-        title: ("Profile"),
-        activeColorPrimary: Theme.of(context).primaryColor,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
+      PersistentTabConfig(
+        item: ItemConfig(
+          icon: const Icon(CupertinoIcons.profile_circled),
+          title: ("Profile"),
+          activeForegroundColor: Theme.of(context).primaryColor,
+          inactiveForegroundColor: CupertinoColors.systemGrey,
+        ),
+        screen: const ProfilePage(),
       ),
     ];
   }
@@ -69,38 +75,29 @@ class _BottonNavBarState extends State<BottonNavBar> {
       child: Scaffold(
           backgroundColor: Colors.transparent,
           body: PersistentTabView(
-            bottomScreenMargin: 0.0,
-            context,
             controller: _bottomNavbarController,
-            screens: _buildScreens(),
-            items: _navBarsItems(),
-            confineInSafeArea: true,
+            tabs: _navBarsItems(),
             backgroundColor: Colors.transparent, // Default is Colors.white.
+
             handleAndroidBackButtonPress: true, // Default is true.
             resizeToAvoidBottomInset:
                 true, // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
             stateManagement: true, // Default is true.
-            hideNavigationBarWhenKeyboardShows:
-                true, // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
-            decoration: NavBarDecoration(
-              borderRadius: BorderRadius.circular(10.0),
-              colorBehindNavBar: Colors.transparent,
-            ),
             popAllScreensOnTapOfSelectedTab: true,
             popActionScreens: PopActionScreensType.all,
-            itemAnimationProperties: const ItemAnimationProperties(
-              // Navigation Bar's items animation properties.
-              duration: Duration(milliseconds: 200),
-              curve: Curves.ease,
-            ),
             screenTransitionAnimation: const ScreenTransitionAnimation(
               // Screen transition animation on change of selected tab.
-              animateTabTransition: true,
               curve: Curves.ease,
               duration: Duration(milliseconds: 200),
             ),
-            navBarStyle: NavBarStyle
-                .style6, // Choose the nav bar style with this property.
+
+            navBarBuilder: (navBarConfig) => Style1BottomNavBar(
+              navBarConfig: navBarConfig,
+              navBarDecoration: NavBarDecoration(
+                  color: Colors.black.withOpacity(0.5),
+                  // backgroundBlendMode: BlendMode.overlay,
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+            ), // Choose the nav bar style with this property.
           )),
     );
   }

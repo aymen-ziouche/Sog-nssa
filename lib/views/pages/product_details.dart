@@ -56,7 +56,7 @@ class _ProductDetailsState extends State<ProductDetails> {
         centerTitle: true,
         title: Text(
           widget.product.title,
-          style: Theme.of(context).textTheme.headline6?.copyWith(
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 color: Colors.white,
               ),
         ),
@@ -169,14 +169,14 @@ class _ProductDetailsState extends State<ProductDetails> {
                     children: [
                       Text(
                         widget.product.title,
-                        style: Theme.of(context).textTheme.headline5!.copyWith(
+                        style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                               fontWeight: FontWeight.w600,
                               color: Colors.white,
                             ),
                       ),
                       Text(
                         '\$${widget.product.price}',
-                        style: Theme.of(context).textTheme.headline5!.copyWith(
+                        style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                               fontWeight: FontWeight.w600,
                               color: Colors.white,
                             ),
@@ -186,7 +186,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   const SizedBox(height: 8.0),
                   Text(
                     widget.product.category,
-                    style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
                           color: Colors.white70,
                         ),
                   ),

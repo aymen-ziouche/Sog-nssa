@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -90,7 +89,7 @@ class _AddShippingAddressPageState extends State<AddShippingAddressPage> {
           shippingAddress != null
               ? 'Editing Shipping Address'
               : 'Adding Shipping Address',
-          style: Theme.of(context).textTheme.subtitle1!.copyWith(
+          style: Theme.of(context).textTheme.titleMedium!.copyWith(
                 color: Colors.white,
               ),
         ),
@@ -114,7 +113,7 @@ class _AddShippingAddressPageState extends State<AddShippingAddressPage> {
                   ),
                   validator: (value) =>
                       value!.isNotEmpty ? null : 'Please enter your name',
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
                 const SizedBox(height: 16.0),
                 TextFormField(
@@ -127,7 +126,7 @@ class _AddShippingAddressPageState extends State<AddShippingAddressPage> {
                   ),
                   validator: (value) =>
                       value!.isNotEmpty ? null : 'Please enter your name',
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
                 const SizedBox(height: 16.0),
                 TextFormField(
@@ -140,7 +139,7 @@ class _AddShippingAddressPageState extends State<AddShippingAddressPage> {
                   ),
                   validator: (value) =>
                       value!.isNotEmpty ? null : 'Please enter your name',
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
                 const SizedBox(height: 16.0),
                 TextFormField(
@@ -153,7 +152,7 @@ class _AddShippingAddressPageState extends State<AddShippingAddressPage> {
                   ),
                   validator: (value) =>
                       value!.isNotEmpty ? null : 'Please enter your name',
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
                 const SizedBox(height: 16.0),
                 TextFormField(
@@ -166,7 +165,7 @@ class _AddShippingAddressPageState extends State<AddShippingAddressPage> {
                   ),
                   validator: (value) =>
                       value!.isNotEmpty ? null : 'Please enter your name',
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
                 const SizedBox(height: 16.0),
                 TextFormField(
@@ -179,7 +178,7 @@ class _AddShippingAddressPageState extends State<AddShippingAddressPage> {
                   ),
                   validator: (value) =>
                       value!.isNotEmpty ? null : 'Please enter your name',
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
                 const SizedBox(height: 32.0),
                 MainButton(
